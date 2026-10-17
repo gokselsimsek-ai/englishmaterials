@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Göksel Şimşek | İngilizce Öğretmeni Kaynak Sitesi</title>
+<meta name="description" content="İngilizce öğretmeni Göksel Şimşek'in yıllık planlar, zümre toplantı tutanakları ve ders kaynakları arşivi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f8fc; --line:#dbe3f1; --ink:#1b2a4a; --soft:#5a6783;
+  --margin:#d64545; --hi:#ffe066; --ok:#2f7d62; --card:#ffffff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#121a2e; --line:#223152; --ink:#e8edf8; --soft:#9aa8c7; --card:#192341; --hi:#e8c93f; --ok:#5cc7a0}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); font-family:var(--body); font-size:1.0625rem; line-height:1.6;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+.wrap{max-width:860px; margin:0 auto; padding:0 1.25rem 0 3.25rem; position:relative}
+.wrap::before{content:""; position:absolute; left:2.25rem; top:0; bottom:0; width:2px; background:var(--margin); opacity:.65}
+header{padding:2.5rem 0 1rem}
+header h1{font-family:var(--head); font-weight:800; font-size:clamp(2rem,7vw,3.4rem); line-height:1.05; margin:0 0 .5rem; letter-spacing:-.02em}
+header p{margin:0; max-width:34rem; color:var(--soft)}
+nav{position:sticky; top:0; z-index:5; background:var(--paper); padding:.75rem 0; border-bottom:2px solid var(--ink)}
+nav .tabs{display:flex; gap:.5rem; flex-wrap:wrap}
+nav button{
+  font:700 .95rem var(--head); color:var(--ink); background:transparent; border:2px solid var(--ink);
+  padding:.55rem .95rem; border-radius:6px; cursor:pointer; min-height:44px;
+}
+nav button[aria-selected="true"]{background:var(--hi); box-shadow:3px 3px 0 var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--margin); outline-offset:2px}
+.search{margin:1rem 0 .25rem}
+.search input{
+  width:100%; font:1rem var(--body); padding:.7rem .9rem; border:2px solid var(--ink); border-radius:6px;
+  background:var(--card); color:var(--ink); min-height:46px;
+}
+.intro{color:var(--soft); margin:.5rem 0 0; font-size:.98rem}
+h2{font-family:var(--head); font-size:1.25rem; margin:2rem 0 .75rem; padding-bottom:.25rem; border-bottom:2px solid var(--line)}
+.item{
+  display:flex; gap:.9rem; align-items:center; background:var(--card);
+  border:2px solid var(--ink); border-radius:6px; padding:.8rem .9rem; margin:0 0 .65rem;
+}
+.badge{
+  flex:none; width:3.2rem; text-align:center; font:800 .78rem var(--head); padding:.45rem 0;
+  border-radius:4px; background:var(--ink); color:var(--paper);
+}
+.badge.pdf{background:#b3261e;color:#fff}
+.badge.docx,.badge.doc{background:#1d4fa3;color:#fff}
+.badge.xlsx,.badge.xls{background:var(--ok);color:#fff}
+.badge.pptx,.badge.ppt{background:#c4571a;color:#fff}
+.info{flex:1; min-width:0}
+.info strong{display:block; font-family:var(--head); font-size:1.02rem; line-height:1.25}
+.info span{display:block; color:var(--soft); font-size:.9rem}
+.dl{
+  flex:none; font:700 .9rem var(--head); text-decoration:none; color:var(--ink);
+  background:var(--hi); border:2px solid var(--ink); border-radius:6px; padding:.55rem .85rem; min-height:44px;
+  display:inline-flex; align-items:center;
+}
+.dl:hover{box-shadow:3px 3px 0 var(--ink)}
+.empty{padding:1.5rem 0; color:var(--soft)}
+footer{margin:3rem 0 0; padding:1.5rem 0 2.5rem; color:var(--soft); font-size:.9rem; border-top:2px solid var(--line)}
+@media (max-width:560px){
+  .wrap{padding-left:2.25rem; padding-right:1rem}
+  .wrap::before{left:1.4rem}
+  .item{flex-wrap:wrap}
+  .dl{width:100%; justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Göksel Şimşek</h1>
+    <p>İngilizce öğretmeni. Yıllık planlar, zümre tutanakları ve ders kaynakları burada, indirmeye hazır.</p>
+  </header>
+
+  <nav aria-label="Bölümler">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-planlar" data-s="planlar">Yıllık planlar</button>
+      <button role="tab" id="t-tutanaklar" data-s="tutanaklar">Zümre tutanakları</button>
+      <button role="tab" id="t-kaynaklar" data-s="kaynaklar">Ders kaynakları</button>
+    </div>
+  </nav>
+
+  <main id="panel" role="tabpanel">
+    <div class="search"><input id="q" type="search" placeholder="Bu bölümde ara" aria-label="Bu bölümde ara"></div>
+    <p class="intro" id="intro"></p>
+    <div id="list" aria-live="polite"></div>
+  </main>
+
+  <footer>© <span id="yr"></span> Göksel Şimşek. Dosyalar eğitim amaçlı paylaşılmaktadır.</footer>
+</div>
+
+<script>
+const SECTIONS = {
+  planlar:    "Sınıf ve eğitim yılına göre yıllık plan dosyaları.",
+  tutanaklar: "Eğitim yılına göre zümre öğretmenler kurulu toplantı tutanakları.",
+  kaynaklar:  "Çalışma kâğıtları, sunumlar ve diğer ders materyalleri."
+};
+let DATA = [], current = "planlar";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function render(){
+  const term = $("q").value.trim().toLocaleLowerCase("tr");
+  const items = DATA.filter(d => d.bolum === current && (!term ||
+    [d.baslik, d.aciklama, d.grup].join(" ").toLocaleLowerCase("tr").includes(term)));
+  if(!items.length){
+    $("list").innerHTML = '<p class="empty">' + (term ? "Aramanla eşleşen dosya yok." : "Bu bölüme henüz dosya eklenmedi.") + "</p>";
+    return;
+  }
+  const groups = {};
+  items.forEach(d => (groups[d.grup || "Diğer"] ||= []).push(d));
+  const names = Object.keys(groups).sort((a,b) => b.localeCompare(a,"tr",{numeric:true}));
+  $("list").innerHTML = names.map(g =>
+    "<h2>" + esc(g) + "</h2>" + groups[g].map(d => {
+      const ext = (d.dosya.split(".").pop() || "").toLowerCase();
+      return '<div class="item"><div class="badge ' + esc(ext) + '">' + esc(ext.toUpperCase()) + '</div>' +
+        '<div class="info"><strong>' + esc(d.baslik) + '</strong>' +
+        (d.aciklama ? "<span>" + esc(d.aciklama) + "</span>" : "") +
+        (d.tarih ? "<span>" + esc(d.tarih) + "</span>" : "") + '</div>' +
+        '<a class="dl" href="' + esc(encodeURI(d.dosya)) + '" download>İndir</a></div>';
+    }).join("")).join("");
+}
+
+function show(s){
+  if(!SECTIONS[s]) s = "planlar";
+  current = s;
+  document.querySelectorAll("nav button").forEach(b => b.setAttribute("aria-selected", b.dataset.s === s));
+  $("panel").setAttribute("aria-labelledby", "t-" + s);
+  $("intro").textContent = SECTIONS[s];
+  $("q").value = "";
+  render();
+}
+
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  location.hash = b.dataset.s;
+}));
+window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+$("q").addEventListener("input", render);
+$("yr").textContent = new Date().getFullYear();
+
+fetch("data.json").then(r => r.json()).then(j => { DATA = j; show(location.hash.slice(1)); })
+  .catch(() => { $("list").innerHTML = '<p class="empty">Dosya listesi yüklenemedi. Siteyi GitHub Pages üzerinden açtığınızdan ve data.json dosyasının yerinde olduğundan emin olun.</p>'; });
+</script>
+</body>
+</html>
